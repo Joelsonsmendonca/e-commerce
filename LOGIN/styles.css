@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #25252b;
+}
+
+.content {
+    background-color: #fff;
+    border-radius: 15px;
+    width: 42%;
+    height: 50%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border: 2px solid #3232d5;
+    box-shadow: 0 0 25px #3232d5;
+
+}
+
+.content::before {
+    content: "";
+    position: absolute;
+    background-color: #3131d7;
+    width: 39%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+
+    left: 0;
+}
+
+.titulo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.titulo-primario {
+    color: #fff;
+}
+
+.titulo-secundario {
+    color: #3232d5;
+
+}
+
+.descricao {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 30px;
+}
+
+.descricao-primaria {
+    color: #fff;
+}
+
+.descricao-secundaria {
+    color: #6b7676;
+}
+
+.btn {
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 10px;
+    padding: 10px 50px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 150px;
+    align-self: center;
+    border: none;
+    margin-top: 1rem;
+}
+
+.btn-primario {
+    background-color: transparent;
+    border: 1px solid #fff;
+    transition: background-color .8s;
+    
+}
+
+.btn-primario:hover {
+    background-color: #fff;
+    color: #3232d5;
+}
+
+.btn-secundario {
+    background-color: #3232d5;
+    border: 1px solid #3232d5;
+    transition: background-color .8s;
+}
+
+.btn-secundario:hover {
+    background-color: #fff;
+    border: 1px solid #3232d5;
+    color: #3232d5;
+}
+
+.primeiro-conteudo {
+    display: flex;
+    font-weight: 300;
+    color: #fff;
+}
+
+.primeira-coluna {
+    text-align: center;
+    flex: 1 0 auto;
+    z-index: 10;
+}
+
+.segunda-coluna{
+    flex: 2 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.segundo-conteudo {
+    position: absolute;
+    display: none;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+}
+
+.form input {
+    height: 45px;
+    width: 100%;
+    border: none;
+    background-color: #ecf0f1;
+}
+
+.label-input {
+    background-color: #ecf0f1;
+    display: flex;
+    align-items: center;
+    margin: 8px;
+}
+
+.icone-mod {
+    color: #6b7676;
+    padding: 0 6px;
+}
