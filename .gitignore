@@ -1,0 +1,33 @@
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de log
+*.log
+
+# Diretórios de cache
+cache/
+tmp/
+
+# Arquivos de configuração
+.env
+config.php
+database.php
+Mysql.php
+
+# Dependências e bibliotecas locais (se usar o Composer)
+vendor/
+
+# Backup de editores de código
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Arquivos do Node.js (caso use ferramentas como npm)
+node_modules/
+dist/
+
+# Arquivos específicos do sistema operacional
+.idea/
+*.vscode/
