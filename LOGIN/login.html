@@ -13,9 +13,9 @@
         <div class="content primeiro-conteudo">
             
             <div class="primeira-coluna">
-                <h2 class="titulo titulo-primario">Bem-vindo de volta!</h2>
+                <h2 class="titulo titulo-primario">Bem-vindo!</h2>
                 <p class="descricao descricao-primaria">Já possui cadastro? Clique aqui!</p>
-                <button class="btn btn-primario">Entrar</button>
+                <button id="entrar" class="btn btn-primario">Entrar</button>
 
             </div>
 
@@ -31,12 +31,12 @@
                     
                     <label class="label-input" for="email">
                         <i class="fa-solid fa-envelope icone-mod"></i>
-                        <input type="email" name="email" id="email" placeholder="Email" required>
+                        <input type="email" name="email" id="email1" placeholder="Email" required>
                     </label>
                     
                     <label class="label-input" for="senha">
                         <i class="fa-solid fa-lock icone-mod"></i>
-                        <input type="password" name="senha" id="senha" placeholder="Senha" required>
+                        <input type="password" name="senha" id="senha1" placeholder="Senha" required>
                     </label>
                     
                     <button class="btn btn-secundario">Criar conta</button>
@@ -50,25 +50,36 @@
         <div class="content segundo-conteudo">
             
             <div class="primeira-coluna">
-                <h2 class="titulo">Olá! Já se cadastrou?</h2>
-                <p class="descricao">Se ainda não tiver cadastro, clique aqui!</p>
-                <button class="btn btn-secundario">Criar conta</button>
+                <h2 class="titulo titulo-primario">Olá! Já se cadastrou?</h2>
+                <p class="descricao descricao-primaria">Se ainda não tiver cadastro, clique aqui!</p>
+                <button id="criar" class="btn btn-primario">Criar conta</button>
 
             </div>
 
             <div class="segunda-coluna">
-                <h2 class="titulo">Entre na sua conta</h2>
-                <p class="descricao">Use seu e-mail pessoal para entrar:</p>
+                <h2 class="titulo titulo-secundario">Entre na sua conta</h2>
+                <p class="descricao descricao-secundaria">Use o seu e-mail pessoal para entrar:</p>
                 <form action="" class="form">
-                    <input type="email" name="email" id="" placeholder="Email">
-                    <input type="password" name="senha" id="" placeholder="Senha">
-            
+                    
+                     <label class="label-input" for="email">
+                         <i class="fa-solid fa-envelope icone-mod"></i>
+                        <input type="email" name="email" id="email2" placeholder="Email" required>
+                    </label>
+                        
+                    <label class="label-input" for="senha">
+                        <i class="fa-solid fa-lock icone-mod"></i>
+                        <input type="password" name="senha" id="senha2" placeholder="Senha" required>
+                     </label>
+
+                     <a class="senha" href="#">Esqueceu sua senha?</a>
                     <button class="btn btn-secundario">Entrar</button>
                 </form>
             </div><!-- segunda-coluna -->
 
         </div><!-- segundo-conteudo -->
     </div>
-    
+    <script src="js/login.js">
+
+    </script>
 </body>
 </html>

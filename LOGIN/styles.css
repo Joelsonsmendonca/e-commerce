@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@
 }
 
 .body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", serif;
 }
 
 .container {
@@ -20,12 +20,12 @@
 .content {
     background-color: #fff;
     border-radius: 15px;
-    width: 42%;
-    height: 50%;
+    width: 960px;
+    height: 65%;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    border: 2px solid #3232d5;
+    border: 1px solid #3232d5;
     box-shadow: 0 0 25px #3232d5;
 
 }
@@ -34,11 +34,10 @@
     content: "";
     position: absolute;
     background-color: #3131d7;
-    width: 39%;
+    width: 40%;
     height: 100%;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
 
     left: 0;
 }
@@ -88,7 +87,7 @@
 .btn-primario {
     background-color: transparent;
     border: 1px solid #fff;
-    transition: background-color .8s;
+    transition: background-color 1s;
     
 }
 
@@ -100,7 +99,7 @@
 .btn-secundario {
     background-color: #3232d5;
     border: 1px solid #3232d5;
-    transition: background-color .8s;
+    transition: background-color 1s;
 }
 
 .btn-secundario:hover {
@@ -113,27 +112,27 @@
     display: flex;
     font-weight: 300;
     color: #fff;
+
+}
+
+.primeiro-conteudo .segunda-coluna {
+    z-index: 11;
 }
 
 .primeira-coluna {
     text-align: center;
-    flex: 1 0 auto;
+    width: 40%;
     z-index: 10;
 }
 
 .segunda-coluna{
-    flex: 2 0 auto;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.segundo-conteudo {
-    position: absolute;
-    display: none;
-}
-
-.form{
+.form {
     display: flex;
     flex-direction: column;
     width: 55%;
@@ -156,4 +155,193 @@
 .icone-mod {
     color: #6b7676;
     padding: 0 6px;
+}
+
+/* segundo conteúdo */
+
+.segundo-conteudo {
+    position: absolute;
+    display: flex;
+}
+
+.segundo-conteudo .primeira-coluna {
+    order: 2;
+    z-index: -1;
+}
+
+.segundo-conteudo .segunda-coluna {
+    order: 1;
+    z-index: -1;
+}
+
+.senha {
+    color: #6b7676;
+    font-size: 14px;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.entrar-js .primeiro-conteudo .primeira-coluna {
+    z-index: -1;
+}
+
+.entrar-js .segundo-conteudo .segunda-coluna {
+    z-index: 11;
+}
+
+.entrar-js .segundo-conteudo .primeira-coluna {
+    z-index: 13;
+}
+
+.entrar-js .content::before {
+    left: 60%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    animation: deslizando 1.3s;
+
+    z-index: 12;
+}
+
+.criar-js .content::before {
+    animation: deslizando-de-volta 1.3s;
+
+    z-index: 12;
+}
+
+.criar-js .segundo-conteudo .primeira-coluna,
+.criar-js .segundo-conteudo .segunda-coluna {
+    z-index: -1;
+}
+
+.criar-js .primeiro-conteudo .segunda-coluna {
+    z-index: 11;
+}
+
+.criar-js .primeiro-conteudo .primeira-coluna {
+    z-index: 13;
+}
+
+/*Deslocamento conteúdo atrás do content::before*/
+.entrar-js .primeiro-conteudo .segunda-coluna {
+    
+    z-index: -1;
+    position: relative;
+    animation: deslocamentoEsq 1.3s;
+}
+
+.criar-js .segundo-conteudo .segunda-coluna {
+    position: relative;
+    z-index: -1;
+    animation: deslocamentoDir 1.3s;
+}
+
+
+
+/*Animação CSS para o conteúdo*/
+
+@keyframes deslocamentoEsq {
+
+    from {
+        left: 0;
+        opacity: 1;
+        z-index: 12;
+    }
+    
+    25% {
+        left: -80px;
+        opacity: .5;
+    }
+
+    50% {
+        left: -100px;
+        opacity: .2;
+    }
+
+    to {
+        left: -110px;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes deslocamentoDir {
+
+    from {
+        left: 0;
+        z-index: 12;
+    }
+
+    25% {
+        left: 80px;
+    }
+
+    50% {
+        left: 100px;
+    }
+
+    to {
+        left: 110px;
+        z-index: -1;
+    }
+}
+
+
+/* Animação - CSS */
+
+@keyframes deslizando {
+
+    from {
+        left: 0%;
+        width: 40%;
+    }
+
+    25% {
+        left: 5%;
+        width: 50%;
+    }
+
+    50% {
+        left: 25%;
+        width: 60%;
+    }
+
+    75% {
+        left: 45%;
+        width: 50%;
+    }
+
+    to {
+        left: 60%;
+        width: 40%;
+    }
+}
+
+@keyframes deslizando-de-volta {
+
+    from {
+        left: 60%;
+        width: 40%;
+    }
+
+    25% {
+        left: 45%;
+        width: 50%;
+    }
+
+    50% {
+        left: 25%;
+        width: 60%;
+    }
+
+    75% {
+        left: 5%;
+        width: 50%;
+    }
+
+    to {
+        left: 0;
+        width: 40%;
+    }
 }
