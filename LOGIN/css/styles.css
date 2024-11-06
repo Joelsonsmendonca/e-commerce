@@ -6,10 +6,10 @@
 }
 
 div {
-    font-family: 'VT323', monospace;
+    font-family: "Open Sans", serif;
   }
   div {
-    font-family: 'VT323', monospace !important;
+    font-family: "Open Sans", serif !important;
   }
 
 .container {
@@ -70,7 +70,7 @@ div {
 }
 
 .descricao-secundaria {
-    color: #6b7676;
+    color: #424242;
 }
 
 .btn {
@@ -156,7 +156,7 @@ div {
 }
 
 .icone-mod {
-    color: #6b7676;
+    color: #424242;
     padding: 0 6px;
 }
 
@@ -178,7 +178,7 @@ div {
 }
 
 .senha {
-    color: #6b7676;
+    color: #424242;
     font-size: 14px;
     margin: 15px 0;
     text-align: center;
