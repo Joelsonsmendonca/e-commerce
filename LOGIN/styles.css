@@ -5,9 +5,12 @@
     box-sizing: border-box;
 }
 
-.body {
-    font-family: "Open Sans", serif;
-}
+div {
+    font-family: 'VT323', monospace;
+  }
+  div {
+    font-family: 'VT323', monospace !important;
+  }
 
 .container {
     display: flex;
