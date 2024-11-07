@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce</title>
+
+    <!-- Link para o arquivo de estilos CSS externo -->
+    <link rel="stylesheet" href="css/estilo.css">
+    
+    <!-- Link para o FontAwesome, que fornece ícones -->
+    <link rel="stylesheet" href="fontawesome-free-6.6.0-web/css/all.css">
+</head>
+<body>
+    
+    <!-- Barra de navegação principal -->
+    <div class="barra-navegacao">
+        <div class="conteudo-cabecalho">
+            <h1 class="logotipo">ÔMEGA<span class="logotipo-destaque">STORE</span></h1>
+            
+            <!-- Navegação com links para diferentes seções do site -->
+            <nav>
+                <ul>
+                    <li>Início</li>
+                    <li>Produtos</li>
+                    <li>Sobre</li>
+                    <li>Contato</li>
+                </ul>
+            </nav>
+
+            <!-- Formulário de pesquisa -->
+            <form action="/pesquisa" method="GET" class="form-pesquisa">
+                <input type="text" name="q" placeholder="Pesquisar..." class="input-pesquisa"> <!-- Campo para inserir o termo de pesquisa -->
+                <button type="submit" class="botao-pesquisa">
+                    <i class="fa-solid fa-search"></i> <!-- Ícone de lupa para indicar a função de pesquisar -->
+                </button>
+            </form>
+
+            <!-- Ícone de carrinho de compras -->
+            <div class="icones-navegacao">
+                <img src="/E-COMMERCE/images/cart.png" alt="Ícone de carrinho de compras">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
