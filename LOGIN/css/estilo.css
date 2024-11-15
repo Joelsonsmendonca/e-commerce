@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #25252b;
+}
+
+.primeira-coluna,
+.segunda-coluna {
+    width: 20%; /* Alterado para 50% para ter a mesma largura */
+    height: 70%; /* Garantir que as colunas tenham a mesma altura */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.primeira-coluna {
+    background-color: #3131d7;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    text-align: center;
+}
+
+.segunda-coluna {
+    background-color: #fff;
+    color: #3232d5;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.titulo {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.descricao {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 30px;
+    text-align: center;
+}
+
+.btn {
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 10px;
+    padding: 10px 50px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 150px;
+    border: none;
+    margin-top: 1rem;
+    transition: background-color 1s;
+    align-self: center; /* Centraliza o botão horizontalmente */
+}
+
+.btn-primario {
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+.btn-primario:hover {
+    background-color: #fff;
+    color: #3232d5;
+}
+
+.btn-secundario {
+    background-color: #3232d5;
+    border: 1px solid #3232d5;
+}
+
+.btn-secundario:hover {
+    background-color: #fff;
+    color: #3232d5;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.label-input {
+    display: flex;
+    align-items: center;
+    background-color: #ecf0f1;
+    padding: 0 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+}
+
+.label-input i {
+    color: #424242;
+}
+
+.form input {
+    height: 45px;
+    width: 100%;
+    border: none;
+    background-color: #ecf0f1;
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+.senha {
+    color: #424242;
+    font-size: 14px;
+    margin: 15px 0;
+    text-align: center;
+}

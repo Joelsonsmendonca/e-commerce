@@ -3,44 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-commerce</title>
-
-    <!-- Link para o arquivo de estilos CSS externo -->
-    <link rel="stylesheet" href="css/estilo.css">
-    
-    <!-- Link para o FontAwesome, que fornece ícones -->
+    <title>E-commerce principal - TESTE</title>
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="fontawesome-free-6.6.0-web/css/all.css">
 </head>
 <body>
     
-    <!-- Barra de navegação principal -->
-    <div class="barra-navegacao">
-        <div class="conteudo-cabecalho">
-            <h1 class="logotipo">ÔMEGA<span class="logotipo-destaque">STORE</span></h1>
+    <header> 
+        <div class="nav-container">
             
-            <!-- Navegação com links para diferentes seções do site -->
-            <nav>
-                <ul>
-                    <li>Início</li>
-                    <li>Produtos</li>
-                    <li>Sobre</li>
-                    <li>Contato</li>
-                </ul>
-            </nav>
+            <div class="barra-navegacao">
+                <div class="conteudo-cabecalho">
+                    <h1 class="logotipo">ÔMEGA<span class="logotipo-destaque">STORE</span></h1>
+                    
+                    <!-- Navegação com links para diferentes seções do site -->
+                    <nav>
+                        <ul>
+                            <li><a href="#">Início</a></li>
+                            <li><a href="#">Produtos</a></li>
+                            <li><a href="#">Sobre</a></li>
+                            <li><a href="#">Contato</a></li>
+                        </ul>
+                    </nav>
 
-            <!-- Formulário de pesquisa -->
-            <form action="/pesquisa" method="GET" class="form-pesquisa">
-                <input type="text" name="q" placeholder="Pesquisar..." class="input-pesquisa"> <!-- Campo para inserir o termo de pesquisa -->
-                <button type="submit" class="botao-pesquisa">
-                    <i class="fa-solid fa-search"></i> <!-- Ícone de lupa para indicar a função de pesquisar -->
-                </button>
-            </form>
+                    <!-- Formulário de pesquisa -->
+                    <form action="/pesquisa" method="GET" class="form-pesquisa">
+                        <input type="text" name="q" placeholder="Pesquisar..." class="input-pesquisa">
+                        <button type="submit" class="botao-pesquisa">
+                            <i class="fa-solid fa-search"></i>
+                        </button>
+                    </form>
+                    <!-- Carrinho Ícone -->
+                    <i class="fa-solid fa-cart-shopping" id="carrinho-icone"></i>
+                </div>
+            </div>
+            
+            <!-- Carrinho -->
+            <div class="carrinho">
+                <h2 class="carrinho-titulo">Seu carrinho de compras!</h2>
+                <!-- Carrinho Conteúdo -->
+                <div class="carrinho-conteudo">
 
-            <!-- Ícone de carrinho de compras -->
-            <div class="icones-navegacao">
-                <img src="/E-COMMERCE/images/cart.png" alt="Ícone de carrinho de compras">
+                </div>
+                <!-- Total -->
+                <div class="total">
+                    <div class="total-titulo">Total</div>
+                    <div class="total-preco">R$0,00</div>
+                </div>
+                <!-- Botão de comprar -->
+                <button type="button" class="btn-compra">Comprar Agora</button>
+                <!-- Fechar carrinho -->
+                <i class="fa-solid fa-x" id="close-cart"></i>
             </div>
         </div>
-    </div>
+    </header>
+
+    <section class="shop container">
+        <h2 class="section-titulo">Explore Nossos Produtos</h2>
+
+        <div class="shop-conteudo">
+            
+            <!-- BOX 1 -->
+            <div class="produto-box">
+                <img src="imagens/camisa1.png" alt="" class="produto-img">
+                <h2 class="produto-titulo">Moletom Vermelho</h2>
+                <span class="preco">R$119,90</span>
+                <i class="fa-solid fa-bag-shopping add-carrinho"></i>
+            </div>
+
+            <!-- BOX 2 -->
+            <div class="produto-box">
+                <img src="imagens/camisa2.png" alt="" class="produto-img">
+                <h2 class="produto-titulo">Moletom Azul</h2>
+                <span class="preco">R$119,90</span>
+                <i class="fa-solid fa-bag-shopping add-carrinho"></i>
+            </div>
+
+            <!-- BOX 3 -->
+            <div class="produto-box">
+                <img src="imagens/camisa3.png" alt="" class="produto-img">
+                <h2 class="produto-titulo">Tênis Esportivo</h2>
+                <span class="preco">R$209,90</span>
+                <i class="fa-solid fa-bag-shopping add-carrinho"></i>
+            </div>
+
+            <!-- BOX 4 -->
+            <div class="produto-box">
+                <img src="imagens/camisa4.png" alt="" class="produto-img">
+                <h2 class="produto-titulo">Camisa Básica Preta</h2>
+                <span class="preco">R$54,90</span>
+                <i class="fa-solid fa-bag-shopping add-carrinho"></i>
+            </div>
+
+            <!-- BOX 5 -->
+            <div class="produto-box">
+                <img src="imagens/camisa5.png" alt="" class="produto-img">
+                <h2 class="produto-titulo">Camisa Básica Branca</h2>
+                <span class="preco">R$49,90</span>
+                <i class="fa-solid fa-bag-shopping add-carrinho"></i>
+            </div> 
+
+            <!-- BOX 6 -->
+            <div class="produto-box">
+                <img src="imagens/camisa6.png" alt="" class="produto-img">
+                <h2 class="produto-titulo">Camisa Social</h2>
+                <span class="preco">R$120,00</span>
+                <i class="fa-solid fa-bag-shopping add-carrinho"></i>
+            </div>
+            
+            <!-- BOX 7 -->
+            <div class="produto-box">
+                <img src="imagens/camisa7.png" alt="" class="produto-img">
+                <h2 class="produto-titulo">Camisa Social</h2>
+                <span class="preco">R$115,00</span>
+                <i class="fa-solid fa-bag-shopping add-carrinho"></i>
+            </div> 
+
+            <!-- BOX 8 -->
+            <div class="produto-box">
+                <img src="imagens/camisa8.png" alt="" class="produto-img">
+                <h2 class="produto-titulo">Short Estampado</h2>
+                <span class="preco">R$79,90</span>
+                <i class="fa-solid fa-bag-shopping add-carrinho"></i>
+            </div> 
+
+            <!-- BOX 9 -->
+            <div class="produto-box">
+                <img src="imagens/camisa9.png" alt="" class="produto-img">
+                <h2 class="produto-titulo">Short Estampado</h2>
+                <span class="preco">R$79,90</span>
+                <i class="fa-solid fa-bag-shopping add-carrinho"></i>
+            </div> 
+
+            <!-- BOX 10 -->
+            <div class="produto-box">
+                <img src="imagens/camisa10.png" alt="" class="produto-img">
+                <h2 class="produto-titulo">Calça Jeans</h2>
+                <span class="preco">R$159,90</span>
+                <i class="fa-solid fa-bag-shopping add-carrinho"></i>
+            </div> 
+        </div>
+    </section>
+    <!-- Link do JS -->
+    <script src="ecommerce.js"></script>
+
 </body>
 </html>

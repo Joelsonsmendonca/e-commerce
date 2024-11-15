@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="css/estilo.css"> <!-- Link para o arquivo CSS (estilo) que define o visual da página -->
+    <link rel="stylesheet" href="fontawesome-free-6.6.0-web/css/all.css"> <!-- Link para o Font Awesome, para usar ícones -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"> <!-- Link para a fonte Open Sans, utilizada na página -->
+</head>
+<body>
+
+    <div class="container"> <!-- Contêiner principal que engloba as duas colunas -->
+        <div class="primeira-coluna"> <!-- Primeira coluna (parte azul) que contém as informações de boas-vindas -->
+            <h2 class="titulo titulo-primario">Bem-vindo!</h2>
+            <p class="descricao descricao-primaria">Já possui cadastro? Clique aqui!</p> <!-- Descrição com link para login -->
+            <button id="entrar" class="btn btn-primario" onclick="window.location.href='login.html'">Entrar</button> <!-- Botão "Entrar" que redireciona para a página de login -->
+        </div>
+
+        <div class="segunda-coluna"> <!-- Segunda coluna (parte branca) que contém o formulário de registro -->
+            <h2 class="titulo titulo-secundario">Crie sua conta</h2>
+            <p class="descricao descricao-secundaria">Use o seu e-mail pessoal para se registrar:</p> <!-- Descrição do formulário -->
+            <form action="" class="form"> <!-- Formulário de registro -->
+                <label class="label-input" for="nome"> <!-- Label para o campo "Nome" -->
+                    <i class="fa-solid fa-user icone-mod"></i> <!-- Ícone de usuário do Font Awesome -->
+                    <input type="text" name="nome" id="nome" placeholder="Nome" required> <!-- Campo de entrada para o nome, com placeholder e campo obrigatório -->
+                </label>
+                <label class="label-input" for="email"> <!-- Label para o campo "Email" -->
+                    <i class="fa-solid fa-envelope icone-mod"></i> <!-- Ícone de envelope do Font Awesome -->
+                    <input type="email" name="email" id="email1" placeholder="Email" required> <!-- Campo de entrada para o e-mail, com placeholder e campo obrigatório -->
+                </label>
+                <label class="label-input" for="senha"> <!-- Label para o campo "Senha" -->
+                    <i class="fa-solid fa-lock icone-mod"></i> <!-- Ícone de cadeado do Font Awesome -->
+                    <input type="password" name="senha" id="senha1" placeholder="Senha" required> <!-- Campo de entrada para a senha, com placeholder e campo obrigatório -->
+                </label>
+                <button class="btn btn-secundario">Criar conta</button> <!-- Botão "Criar conta" que será usado para submeter o formulário -->
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
