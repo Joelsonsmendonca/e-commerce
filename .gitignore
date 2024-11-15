@@ -30,4 +30,4 @@ dist/
 
 # Arquivos específicos do sistema operacional
 .idea/
-*.vscode/
+.vscode/
