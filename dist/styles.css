@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f6f6f6;
+  font-family: 'Lato', sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+header {
+  background: #111;
+  color: white;
+  font-size: 24px;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  background: #fff;
+  padding: 0 30px 30px;
+}
+
+.page-title {
+  font-size: 30px;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+}
+
+section {
+  flex: 1;
+}
+
+aside {
+  background: #e7e6e9;
+  min-width: 250px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table thead tr {
+  border-bottom: 3px solid #111;
+}
+
+table thead tr th {
+  text-align: left;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  color: black;
+}
+
+table tbody tr {
+  border-bottom: 3px solid #111;
+}
+
+table tbody tr td {
+  padding: 30px 0;
+}
+
+.produtc {
+  display: flex;
+  align-items: center;
+}
+
+.produtc img {
+  border-radius: 6px;
+}
+
+.produtc .info {
+  margin-left: 20px;
+}
+
+.produtc .info .name {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.produtc .info .category {
+  color: #666;
+}
+
+.qty {
+  background: #d3d3d3;
+  display: inline-flex;
+  padding: 5px 0;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 50px;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 20px;
+}
+
+.qty span {
+  margin: 0 10px;
+}
+
+.qty button {
+  display: flex;
+  align-items: flex;
+  background: transparent;
+  border: 0;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.qty button:hover {
+  background: #eee;
+}
+
+.remove {
+  background: #eee;
+  border: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.remove:hover {
+  background: #666;
+}
+
+aside .box {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  background: #ddd;
+}
+
+aside .box header {
+  padding: 15px 20px;
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+}
+
+aside .box .info {
+  padding: 15px;
+}
+
+aside .box .info > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+aside .box .info > div:last-child {
+  margin: 0;
+}
+
+aside .box .info button {
+  color: green;
+  background: transparent;
+  margin-bottom: 0;
+}
+
+aside .box .info button:hover {
+  background: greenyellow;
+}
+
+aside .box .info i {
+  font-size: 20px;
+}
+
+aside .box footer {
+  padding: 15px 20px;
+  font-size: 16px;
+  background: #b0b5b6;
+  font-size: 16px;
+  justify-content: space-between;
+}
+
+aside > button {
+  background: #5c5c5c;
+  border: 0;
+  padding: 14px 0;
+  color: #ccc;
+  background: green;
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
+aside > button:hover {
+  background: greenyellow;
+}
+
+/*# sourceMappingURL=styles.css.map */

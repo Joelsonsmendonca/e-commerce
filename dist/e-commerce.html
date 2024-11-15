@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de compras</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <span>e-commerce <b>carrinho de compras</b></span>
+    </header>
+    <main>
+        <div class="page-title">SEU CARRINHO DE COMPRAS</div>
+        <div class="content">
+            <section>
+                <table id="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Preço</th>
+                            <th>Quantidade</th>
+                            <th>Total</th>
+                            <th>Remover</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </section>
+            <aside>
+                <div class="box">
+                    <header>Caixa do carrinho</header>
+                    <div class="info">
+                        <div><span>Total da compra</span><span id="cart-total">$0</span></div>
+                        <div><span>Frete</span><span>Gratuito</span></div>
+                        <div>
+                            <button>Adicionar Cupom <i class='bx bx-right-arrow-alt'></i></button>
+                        </div>
+                    </div>
+                    <footer>
+                        <span>Total</span>
+                        <span id="cart-total-footer">$0</span>
+                    </footer>
+                </div>
+                <button id="finalize-btn">Finalizar</button>
+            </aside>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
