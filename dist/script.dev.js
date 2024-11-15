@@ -4,6 +4,7 @@ var cartTable = document.querySelector("#cart-table tbody");
 var cartTotal = document.getElementById("cart-total");
 var cartTotalFooter = document.getElementById("cart-total-footer");
 var finalizeButton = document.getElementById("finalize-btn");
+var messageContainer = document.getElementById("message-container");
 var cart = [{
   name: "Produto 1",
   price: 5,
@@ -24,6 +25,31 @@ var cart = [{
   image: "https://picsum.photos/50/50"
 }];
 
+function saveCart() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function loadCart() {
+  var storedCart = localStorage.getItem("cart");
+
+  if (storedCart) {
+    cart = JSON.parse(storedCart);
+    updateCart();
+  }
+}
+
+function showMessage(message) {
+  var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'success';
+  messageContainer.innerHTML = '';
+  var messageElement = document.createElement('div');
+  messageElement.className = "message ".concat(type);
+  messageElement.textContent = message;
+  messageContainer.appendChild(messageElement);
+  setTimeout(function () {
+    messageContainer.innerHTML = '';
+  }, 3000);
+}
+
 function updateCart() {
   cartTable.innerHTML = "";
   var total = 0;
@@ -35,11 +61,13 @@ function updateCart() {
   });
   cartTotal.textContent = "$".concat(total.toFixed(0));
   cartTotalFooter.textContent = "$".concat(total.toFixed(0));
+  saveCart();
 }
 
 function removeItem(index) {
   cart.splice(index, 1);
   updateCart();
+  showMessage("Item removido do carrinho.", "success");
 }
 
 function updateQuantity(index, increase) {
@@ -50,6 +78,7 @@ function updateQuantity(index, increase) {
   }
 
   updateCart();
+  showMessage("Quantidade atualizada.", "success");
 }
 
 cartTable.addEventListener("click", function (event) {
@@ -70,12 +99,12 @@ cartTable.addEventListener("click", function (event) {
 });
 finalizeButton.addEventListener("click", function () {
   if (cart.length > 0) {
-    alert("Compra finalizada com sucesso!");
+    showMessage("Compra finalizada com sucesso!", "success");
     cart = [];
     updateCart();
   } else {
-    alert("Seu carrinho está vazio.");
+    showMessage("Seu carrinho está vazio.", "error");
   }
 });
-updateCart();
+window.onload = loadCart;
 //# sourceMappingURL=script.dev.js.map
