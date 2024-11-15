@@ -4,6 +4,7 @@ if(isset($_POST['acao'])){
     // Obtém e trata os dados do formulário
     $login = strip_tags($_POST['login']);
     $senha = strip_tags($_POST['senha']);
+    $nome = $_POST['nome'] ? $_POST['nome'] : '';
 
     // Prepara a consulta SQL para buscar o usuário pelo login
     $sql = MySql::getConn()->prepare("SELECT * FROM user WHERE login = ?");
@@ -18,6 +19,8 @@ if(isset($_POST['acao'])){
             // Inicia a sessão do usuário
             $_SESSION['login'] = $login;
             $_SESSION['cargo'] = $user['cargo'];
+            $_SESSION['nome'] = $user['nome'];
+            $_SESSION['id'] = $user['id'];
             // Redireciona para a página inicial
             echo '<script>location.href="/e-commerce"</script>';
         } else {
@@ -43,7 +46,7 @@ if(isset($_SESSION['login'])){
     echo '<script>location.href="/e-commerce"</script>';
 }
 ?>
-```
+
 
 <div class="container">
     <form method="POST">
