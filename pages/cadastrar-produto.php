@@ -1,20 +1,25 @@
 <?php
 
-    $url = "http://localhost:63342/e-commerce/?url=cadastrar-produto";
+if ($_SESSION['cargo'] != 1) {
+    header('Location: /e-commerce/index.php');
+    exit();
+}
+
+$url = "http://localhost:63342/e-commerce/?url=cadastrar-produto";
 
 // Verifica se o formulário foi enviado
-if(isset($_POST['acao'])){
+if (isset($_POST['acao'])) {
     // Obtém os dados do formulário
     $nome = $_POST['nome-produto'];
     $descricao = $_POST['descricao-produto'];
     $preco = number_format((float)$_POST['preco'], 2, '.', ''); // Formata o preço como decimal
 
     // Verifica se o arquivo foi enviado
-    if(isset($_FILES['foto'])){
+    if (isset($_FILES['foto'])) {
         $foto = $_FILES['foto'];
 
         // Verifica se o arquivo foi enviado sem erros
-        if($foto['error'] == UPLOAD_ERR_OK){
+        if ($foto['error'] == UPLOAD_ERR_OK) {
             // Obtém a extensão do arquivo
             $extensao = pathinfo($foto['name'], PATHINFO_EXTENSION);
             // Gera um novo nome único para o arquivo
@@ -23,9 +28,9 @@ if(isset($_POST['acao'])){
             $diretorio = 'uploads/' . $novoNome;
 
             // Move o arquivo para o diretório de uploads
-            if(move_uploaded_file($foto['tmp_name'], $diretorio)){
+            if (move_uploaded_file($foto['tmp_name'], $diretorio)) {
                 // Verifica se o usuário está logado
-                if(isset($_SESSION['id'])){
+                if (isset($_SESSION['id'])) {
                     // Prepara a consulta SQL para inserir os dados no banco de dados
                     $sql = MySql::getConn()->prepare("INSERT INTO produtos VALUES (null, ?,?,?,?,?)");
                     // Executa a consulta com os dados do formulário e o caminho do arquivo
@@ -52,24 +57,24 @@ if(isset($_POST['acao'])){
 ?>
 <div class="container">
     <form method="POST" enctype="multipart/form-data">
-        <h1 class="h3 mb-3 fw-normal">Cadastro</h1>
+        <h1 class="h3 mb-3 fw-normal">Cadastrar Produto</h1>
 
         <div class="form-floating">
-            <input name="nome-produto" type="text" class="form-control" id="floatingInput">
+            <input name="nome-produto" type="text" class="form-control" id="floatingInput" placeholder="Nome do produto">
             <label for="floatingInput">Nome do produto</label>
         </div>
 
         <br/>
 
         <div class="form-floating">
-            <input name="descricao-produto" type="text" class="form-control" id="floatingInput">
+            <input name="descricao-produto" type="text" class="form-control" id="floatingInput" placeholder="Descrição do produto">
             <label for="floatingInput">Descrição</label>
         </div>
 
         <br/>
 
         <div class="form-floating">
-            <input name="preco" type="number" class="form-control" step="0.01" id="floatingInput">
+            <input name="preco" type="number" class="form-control" step="0.01" id="floatingInput" placeholder="Preço">
             <label for="floatingInput">Preço</label>
         </div>
 

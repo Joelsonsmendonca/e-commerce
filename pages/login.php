@@ -1,52 +1,51 @@
 <?php
-// Verifica se o formulário foi enviado
-if(isset($_POST['acao'])){
-    // Obtém e trata os dados do formulário
+// Check if the form was submitted
+if (isset($_POST['acao'])) {
+    // Get and sanitize form data
     $login = strip_tags($_POST['login']);
     $senha = strip_tags($_POST['senha']);
-    $nome = $_POST['nome'] ? $_POST['nome'] : '';
+    $nome = isset($_POST['nome']) ? strip_tags($_POST['nome']) : '';
 
-    // Prepara a consulta SQL para buscar o usuário pelo login
+    // Prepare SQL query to fetch user by login
     $sql = MySql::getConn()->prepare("SELECT * FROM user WHERE login = ?");
     $sql->execute(array($login));
 
-    // Verifica se o usuário foi encontrado
-    if($sql->rowCount() == 1){
-        // Obtém os dados do usuário
+    // Check if the user was found
+    if ($sql->rowCount() == 1) {
+        // Get user data
         $user = $sql->fetch(PDO::FETCH_ASSOC);
-        // Verifica se a senha está correta
-        if(password_verify($senha, $user['senha'])){
-            // Inicia a sessão do usuário
+        // Verify the password
+        if (password_verify($senha, $user['senha'])) {
+            // Initialize user session
             $_SESSION['login'] = $login;
             $_SESSION['cargo'] = $user['cargo'];
             $_SESSION['nome'] = $user['nome'];
             $_SESSION['id'] = $user['id'];
-            // Redireciona para a página inicial
+            // Redirect to the homepage
             echo '<script>location.href="/e-commerce"</script>';
         } else {
-            // Exibe mensagem de senha incorreta
+            // Display incorrect password message
             echo '<script>alert("Senha incorreta")</script>';
         }
     } else {
-        // Exibe mensagem de login não encontrado
+        // Display login not found message
         echo '<script>alert("Login não encontrado")</script>';
     }
 } else if (isset($_GET['acao']) && $_GET['acao'] == 'deslogar') {
-    // Desloga o usuário
-    $_SESSION['login'] = "";
-    unset($_SESSION['login']);
-    // Redireciona para a página inicial
+    // Logout the user
+    session_unset();
+    session_destroy();
+    // Redirect to the homepage
     echo '<script>location.href="/e-commerce"</script>';
     die();
 }
 
-// Verifica se o usuário já está logado
-if(isset($_SESSION['login'])){
-    // Redireciona para a página inicial
+// Check if the user is already logged in
+if (isset($_SESSION['login'])) {
+    // Redirect to the homepage
     echo '<script>location.href="/e-commerce"</script>';
 }
 ?>
-
 
 <div class="container">
     <form method="POST">
@@ -69,6 +68,5 @@ if(isset($_SESSION['login'])){
             </label>
         </div>
         <button name="acao" class="btn btn-primary w-100 py-2" type="submit">Entrar</button>
-
     </form>
 </div>

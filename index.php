@@ -2,7 +2,6 @@
 // Incluindo o documento de conexão com o banco de dados e iniciando a conexão
 include 'MySql.php';
 session_start();
-
 // Obtendo a URL atual
 $currentUrl = $_SERVER['REQUEST_URI'];
 $pasta_raiz = '/e-commerce/index.php';
@@ -20,6 +19,7 @@ if ($currentUrl == '/e-commerce/' || $currentUrl == "$pasta_raiz") {
 <head>
     <!-- Cabeçalho estático -->
     <link rel="stylesheet" href="/pages/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="pages/images/1731979779455.png">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
         <div class="col-md-3 mb-2 mb-md-0">
             <a href="/e-commerce" class="d-inline-flex link-body-emphasis text-decoration-none">
@@ -34,7 +34,7 @@ if ($currentUrl == '/e-commerce/' || $currentUrl == "$pasta_raiz") {
         ?>
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li><a href="/e-commerce" class="nav-link px-2 link-secondary">Inicio</a></li>
-            <li><a href="#" class="nav-link px-2">Features</a></li>
+            <li><a href="../e-commerce/?url=carrinho" id="carrinho" class="nav-link px-2">Carrinho</a></li>
             <li><a href="#" class="nav-link px-2">Pricing</a></li>
             <li><a href="#" class="nav-link px-2">FAQs</a></li>
             <li><a href="#" class="nav-link px-2">About</a></li>
@@ -53,8 +53,8 @@ if ($currentUrl == '/e-commerce/' || $currentUrl == "$pasta_raiz") {
                 <div class="col-md-3 text-end">
                 <button type="button" id="cadastrar-produto" class="btn btn-primary">cadastrar produto</button>
             <?php } ?> <!-- Caso esteja logado, aparece botão de deslogar -->
-                <button id="deslogar" type="button" class="btn btn-primary">deslogar</button>
-                </div>
+            <button id="deslogar" type="button" class="btn btn-primary">deslogar</button>
+            </div>
         <?php } ?>
     </header>
     <meta charset="UTF-8">
@@ -64,33 +64,37 @@ if ($currentUrl == '/e-commerce/' || $currentUrl == "$pasta_raiz") {
 </head>
 <body>
 <?php
-// Verifica se a URL foi passada como parâmetro
 if (isset($_GET['url'])) {
     $url = $_GET['url'];
-    // Verifica se o arquivo correspondente à URL existe
-    if (file_exists('pages/' . $url . '.php')) {
-        // Inclui o arquivo correspondente à URL
+    if (preg_match('/^produto$/', $url)) {
+        $produto_id = $_GET['id'];  // Agora o ID será capturado corretamente
+        include('pages/produto.php');
+    } elseif (file_exists('pages/' . $url . '.php')) {
         include('pages/' . $url . '.php');
     } else {
-        // Inclui a página de erro 404 se o arquivo não for encontrado
         include('pages/404.php');
     }
 }
+
 ?>
+
 <div class="container">
     <div class="row">
         <?php if ($currentUrl == '/e-commerce/' || $currentUrl == "$pasta_raiz"){ ?>
-            <?php foreach ($produtos as $produto): ?>
+            <?php foreach ($produtos as $key=> $produto): ?>
                 <div class="col-md-4">
+                    <a href="?url=produto&id=<?php echo $produto['id']; ?>" id="detalhes" class="text-decoration-none">
                     <div class="card mb-4" style="width: 100%;">
                         <img src="<?php echo htmlspecialchars($produto['foto']); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($produto['nome-produto']); ?>">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo htmlspecialchars($produto['nome-produto']); ?></h5>
                             <p class="card-text"><?php echo htmlspecialchars($produto['descricao-produto']); ?></p>
                             <p class="card-text"><strong>Preço: R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?></strong></p>
+                            <a href="pages/adicionarCarrinho.php?produto_id=<?php echo $produto['id']; ?>" class="btn btn-primary">Adicionar ao carrinho</a>
                         </div>
                     </div>
                 </div>
+                </a>
             <?php endforeach; ?>
         <?php }; ?>
     </div>
@@ -116,6 +120,13 @@ if (isset($_GET['url'])) {
     document.getElementById('deslogar')?.addEventListener('click', () => {
         window.location.href = "?url=Login&acao=deslogar";
     });
+    document.getElementById('carrinho')?.addEventListener('click', () => {
+        window.location.href = "?url=carrinho";
+    });
+    document.getElementById('detalhes')?.addEventListener('click', () => {
+        window.location.href = "?url=produto?produto_id=<?php echo $produto['id']; ?>";
+    });
+
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
