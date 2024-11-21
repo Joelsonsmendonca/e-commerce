@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Open Sans", serif;
 }
 
 .container {
@@ -16,8 +17,8 @@
 
 .primeira-coluna,
 .segunda-coluna {
-    width: 20%; /* Alterado para 50% para ter a mesma largura */
-    height: 70%; /* Garantir que as colunas tenham a mesma altura */
+    width: 30%;
+    height: 70%;
     padding: 40px;
     display: flex;
     flex-direction: column;
