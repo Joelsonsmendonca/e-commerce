@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* Reset de margens, bordas e fonte padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", serif;
+}
+
+/* Estilização do contêiner principal */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #25252b;
+    padding: 25px;
+
+}
+
+/* Estilização do formulário */
+.container form {
+    width: 35%;
+    padding: 40px;
+    background: #fff;
+    border-radius: 15px;
+}
+
+/* Estilização das linhas para layout flexível */
+form .linha {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Estilização das colunas dentro das linhas */
+.linha .coluna {
+    flex: 1 1 250px;
+}
+
+/* Títulos de cada seção */
+.coluna .titulo {
+    font-size: 20px;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+/* Espaçamento interno dos campos de entrada */
+.coluna .input-box {
+    margin: 15px 0;
+}
+
+/* Estilização para o texto acima dos inputs */
+.input-box span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Estilização dos campos de entrada */
+.input-box input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+/* Estilização dos campos agrupados (flex) */
+.coluna .flex {
+    display: flex;
+    gap: 15px;
+}
+
+/* Ajusta margens internas para inputs agrupados */
+.flex .input-box {
+    margin-top: 5px;
+}
+
+/* Estilização das imagens de cartões */
+.input-box img {
+    height: 34px;
+    margin-top: 5px;
+    filter: drop-shadow(0 0 1px #000);
+}
+
+/* Estilização do botão de envio */
+form .btn {
+    width: 100%;
+    padding: 12px;
+    background: #3232d5;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    font-size: 17px;
+    color: #fff;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+/* Alteração de cor do botão ao passar o mouse */
+form .btn:hover {
+    background: #3f3fe1;
+}
