@@ -47,26 +47,52 @@ if (isset($_SESSION['login'])) {
 }
 ?>
 
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <link rel="stylesheet" href="/pages/css/styles.css"> <!-- Certifique-se de que o caminho esteja correto -->
+</head>
+<body>
 <div class="container">
-    <form method="POST">
-        <h1 class="h3 mb-3 fw-normal">Faça login</h1>
+    <div class="primeira-coluna">
+        <h2 class="titulo titulo-primario">Olá! Já se cadastrou?</h2>
+        <p class="descricao descricao-primaria">Se ainda não tiver cadastro, clique aqui!</p>
+        <button id="criar" class="btn btn-primario" onclick="window.location.href='/e-commerce/?url=cadastro'">Criar conta</button>
+    </div>
 
-        <div class="form-floating">
-            <input name="login" type="text" class="form-control" id="floatingInput">
-            <label for="floatingInput">Login</label>
-        </div>
-        <br/>
-        <div class="form-floating">
-            <input name="senha" type="password" class="form-control" id="floatingPassword">
-            <label for="floatingPassword">Senha</label>
-        </div>
+    <div class="segunda-coluna">
+        <h2 class="titulo titulo-secundario">Entre na sua conta</h2>
+        <p class="descricao descricao-secundaria">Use o seu login para entrar:</p>
 
-        <div class="form-check text-start my-3">
-            <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                Lembrar-me
+        <!-- Formulário de login -->
+        <form action="" method="POST" class="form">
+            <!-- Campo de login -->
+            <label class="label-input" for="login">
+                <i class="fa-solid fa-envelope icone-mod"></i>
+                <input type="text" name="login" id="login" placeholder="Login" required>
             </label>
-        </div>
-        <button name="acao" class="btn btn-primary w-100 py-2" type="submit">Entrar</button>
-    </form>
+
+            <!-- Campo de senha -->
+            <label class="label-input" for="senha">
+                <i class="fa-solid fa-lock icone-mod"></i>
+                <input type="password" name="senha" id="senha" placeholder="Senha" required>
+            </label>
+
+            <!-- Lembre-se de mim -->
+            <div class="form-check text-start my-3">
+                <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Lembrar-me
+                </label>
+            </div>
+
+            <!-- Link para recuperação de senha -->
+            <a class="senha" href="#">Esqueceu sua senha?</a>
+
+            <!-- Botão de login -->
+            <button name="acao" class="btn btn-secundario w-100 py-2" type="submit">Entrar</button>
+        </form>
+    </div>
 </div>
+</body>
+</html>

@@ -18,45 +18,53 @@ if ($currentUrl == '/e-commerce/' || $currentUrl == "$pasta_raiz") {
 <html lang="pt">
 <head>
     <!-- Cabeçalho estático -->
-    <link rel="stylesheet" href="/pages/css/styles.css">
+    <!--<link rel="stylesheet" href="/pages/css/styles.css">-->
     <link rel="icon" type="image/x-icon" href="pages/images/1731979779455.png">
-    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <div class="col-md-3 mb-2 mb-md-0">
-            <a href="/e-commerce" class="d-inline-flex link-body-emphasis text-decoration-none">
-                <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-            </a>
-        </div>
-        <?php
-        // Mensagem de boas-vindas
-        if (isset($_SESSION['login'])) {
-            echo '<h6>Olá, ' . $_SESSION['nome'] . '</h6>';
-        }
+    <?php
+    // Verifica se a página atual NÃO é login ou registro
+    if (!isset($_GET['url']) || ($_GET['url'] !== 'login' && $_GET['url'] !== 'cadastro')) {
         ?>
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="/e-commerce" class="nav-link px-2 link-secondary">Inicio</a></li>
-            <li><a href="../e-commerce/?url=carrinho" id="carrinho" class="nav-link px-2">Carrinho</a></li>
-            <li><a href="#" class="nav-link px-2">Pricing</a></li>
-            <li><a href="#" class="nav-link px-2">FAQs</a></li>
-            <li><a href="#" class="nav-link px-2">About</a></li>
-        </ul>
-        <?php
-        // Verificação se o usuário está logado, caso não, aparece o botão de entrar/registrar
-        if (!isset($_SESSION['login'])) {
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <div class="col-md-3 mb-2 mb-md-0">
+                <a href="/e-commerce" class="d-inline-flex link-body-emphasis text-decoration-none">
+                    <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+                </a>
+            </div>
+            <?php
+            // Mensagem de boas-vindas
+            if (isset($_SESSION['login'])) {
+                echo '<h6>Olá, ' . $_SESSION['nome'] . '</h6>';
+            }
             ?>
-            <div class="col-md-3 text-end">
-                <button type="button" id="Login" class="btn btn-outline-primary me-2">Entrar</button>
-                <button type="button" id="Cadastro" class="btn btn-primary">Registrar-se</button>
-            </div>
-
-        <?php } else { ?>
-            <?php if ($_SESSION['cargo'] == 1) { ?> <!-- Verifica o cargo de administrador, caso seja 1 pode cadastrar produto -->
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="/e-commerce" class="nav-link px-2 link-secondary">Inicio</a></li>
+                <li><a href="../e-commerce/?url=carrinho" id="carrinho" class="nav-link px-2">Carrinho</a></li>
+                <li><a href="#" class="nav-link px-2">Pricing</a></li>
+                <li><a href="#" class="nav-link px-2">FAQs</a></li>
+                <li><a href="#" class="nav-link px-2">About</a></li>
+            </ul>
+            <?php
+            // Verificação se o usuário está logado, caso não, aparece o botão de entrar/registrar
+            if (!isset($_SESSION['login'])) {
+                ?>
                 <div class="col-md-3 text-end">
-                <button type="button" id="cadastrar-produto" class="btn btn-primary">cadastrar produto</button>
-            <?php } ?> <!-- Caso esteja logado, aparece botão de deslogar -->
-            <button id="deslogar" type="button" class="btn btn-primary">deslogar</button>
-            </div>
-        <?php } ?>
-    </header>
+                    <button type="button" id="Login" class="btn btn-outline-primary me-2">Entrar</button>
+                    <button type="button" id="Cadastro" class="btn btn-primary">Registrar-se</button>
+                </div>
+
+            <?php } else { ?>
+                <?php if ($_SESSION['cargo'] == 1) { ?> <!-- Verifica o cargo de administrador, caso seja 1 pode cadastrar produto -->
+                    <div class="col-md-3 text-end">
+                    <button type="button" id="cadastrar-produto" class="btn btn-primary">cadastrar produto</button>
+                <?php } ?> <!-- Caso esteja logado, aparece botão de deslogar -->
+                <button id="deslogar" type="button" class="btn btn-primary">deslogar</button>
+                </div>
+            <?php } ?>
+        </header>
+        <?php
+    } // Fecha o if
+    ?>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>E-commerce</title>
@@ -102,30 +110,43 @@ if (isset($_GET['url'])) {
 
 <script>
     // Adiciona um evento de clique ao botão de cadastro de produto
-    document.getElementById('cadastrar-produto')?.addEventListener('click', () => {
-        window.location.href = "?url=cadastrar-produto";
+    document.addEventListener('click', (event) => {
+        const target = event.target;
+
+        // Botão de cadastro de produto
+        if (target.id === 'cadastrar-produto') {
+            window.location.href = "?url=cadastrar-produto";
+        }
+
+        // Botão de login
+        if (target.id === 'Login') {
+            window.location.href = "?url=login";
+        }
+
+        // Botão de cadastro de usuários
+        if (target.id === 'Cadastro') {
+            window.location.href = "?url=cadastro";
+        }
+
+        // Botão de deslogar
+        if (target.id === 'deslogar') {
+            window.location.href = "?url=Login&acao=deslogar";
+        }
+
+        // Botão do carrinho
+        if (target.id === 'carrinho') {
+            window.location.href = "?url=carrinho";
+        }
+
+        // Botão de detalhes do produto
+        if (target.id === 'detalhes') {
+            const produtoId = target.dataset.produtoId; // Obter o ID do produto do atributo data
+            if (produtoId) {
+                window.location.href = `?url=produto&id=${produtoId}`;
+            }
+        }
     });
 
-    // Adiciona um evento de clique ao botão de login
-    document.getElementById('Login')?.addEventListener('click', () => {
-        window.location.href = "?url=login";
-    });
-
-    // Adiciona um evento de clique ao botão de cadastro de usuários
-    document.getElementById('Cadastro')?.addEventListener('click', () => {
-        window.location.href = "?url=cadastro";
-    });
-
-    // Adiciona um evento de clique ao botão de deslogar
-    document.getElementById('deslogar')?.addEventListener('click', () => {
-        window.location.href = "?url=Login&acao=deslogar";
-    });
-    document.getElementById('carrinho')?.addEventListener('click', () => {
-        window.location.href = "?url=carrinho";
-    });
-    document.getElementById('detalhes')?.addEventListener('click', () => {
-        window.location.href = "?url=produto?produto_id=<?php echo $produto['id']; ?>";
-    });
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
