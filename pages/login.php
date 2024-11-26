@@ -1,10 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/e-commerce/pages/css/styles.css">
+    <link rel="stylesheet" href="pages/fontawesome-free-6.6.0-web/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <div class="primeira-coluna">
+        <h2 class="titulo titulo-primario">Olá! Já se cadastrou?</h2>
+        <p class="descricao descricao-primaria">Se ainda não tiver cadastro, clique aqui!</p>
+        <button id="criar" class="btn btn-primario" onclick="window.location.href='/e-commerce/?url=cadastro'">Criar conta</button>
+    </div>
+
+    <div class="segunda-coluna">
+        <h2 class="titulo titulo-secundario">Entre na sua conta</h2>
+        <p class="descricao descricao-secundaria">Use o seu login para entrar:</p>
+
+        <form action="" method="POST" class="form">
+            <label class="label-input" for="login">
+                <i class="fa-solid fa-envelope icone-mod"></i>
+                <input type="text" name="login" id="email2" placeholder="Login" required>
+            </label>
+            <label class="label-input" for="senha">
+                <i class="fa-solid fa-lock icone-mod"></i>
+                <input type="password" name="senha" id="senha2" placeholder="Senha" required>
+            </label>
+            <a class="senha" href="#">Esqueceu sua senha?</a>
+            <button name="acao" class="btn btn-secundario" type="submit">Entrar</button>
+        </form>
+    </div>
+</div>
+
 <?php
 // Check if the form was submitted
 if (isset($_POST['acao'])) {
     // Get and sanitize form data
     $login = strip_tags($_POST['login']);
     $senha = strip_tags($_POST['senha']);
-    $nome = isset($_POST['nome']) ? strip_tags($_POST['nome']) : '';
 
     // Prepare SQL query to fetch user by login
     $sql = MySql::getConn()->prepare("SELECT * FROM user WHERE login = ?");
@@ -47,52 +84,5 @@ if (isset($_SESSION['login'])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <link rel="stylesheet" href="/pages/css/styles.css"> <!-- Certifique-se de que o caminho esteja correto -->
-</head>
-<body>
-<div class="container">
-    <div class="primeira-coluna">
-        <h2 class="titulo titulo-primario">Olá! Já se cadastrou?</h2>
-        <p class="descricao descricao-primaria">Se ainda não tiver cadastro, clique aqui!</p>
-        <button id="criar" class="btn btn-primario" onclick="window.location.href='/e-commerce/?url=cadastro'">Criar conta</button>
-    </div>
-
-    <div class="segunda-coluna">
-        <h2 class="titulo titulo-secundario">Entre na sua conta</h2>
-        <p class="descricao descricao-secundaria">Use o seu login para entrar:</p>
-
-        <!-- Formulário de login -->
-        <form action="" method="POST" class="form">
-            <!-- Campo de login -->
-            <label class="label-input" for="login">
-                <i class="fa-solid fa-envelope icone-mod"></i>
-                <input type="text" name="login" id="login" placeholder="Login" required>
-            </label>
-
-            <!-- Campo de senha -->
-            <label class="label-input" for="senha">
-                <i class="fa-solid fa-lock icone-mod"></i>
-                <input type="password" name="senha" id="senha" placeholder="Senha" required>
-            </label>
-
-            <!-- Lembre-se de mim -->
-            <div class="form-check text-start my-3">
-                <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                    Lembrar-me
-                </label>
-            </div>
-
-            <!-- Link para recuperação de senha -->
-            <a class="senha" href="#">Esqueceu sua senha?</a>
-
-            <!-- Botão de login -->
-            <button name="acao" class="btn btn-secundario w-100 py-2" type="submit">Entrar</button>
-        </form>
-    </div>
-</div>
 </body>
 </html>

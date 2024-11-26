@@ -58,7 +58,7 @@ if (isset($_POST['update_quantidade'])) {
                         </td>
                         <td>R$ <?php echo number_format($produto['preco'] * $produto['quantidade'], 2, ',', '.'); ?></td>
                         <td>
-                            <a href="/pages/remover_do_carrinho.php?produto_id=<?php echo $produto_id; ?>" class="btn btn-danger btn-sm">Remover</a>
+                            <a href="pages/remover_do_carrinho.php?produto_id=<?php echo $produto_id; ?>" class="btn btn-danger btn-sm">Remover</a>
                         </td>
                     </tr>
                 <?php else: ?>
@@ -89,3 +89,9 @@ if (isset($_POST['update_quantidade'])) {
 </div>
 </body>
 </html>
+
+<style>
+    body {
+        padding-top: 60px;
+    }
+</style>

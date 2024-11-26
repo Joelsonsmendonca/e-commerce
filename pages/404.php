@@ -9,53 +9,67 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
         }
 
         body {
-            align-items: center;
+            display: flex;
             justify-content: center;
+            align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
-            color: #333;
+            background-color: #333; /* Mesma cor do container */
+            font-family: 'Arial', sans-serif;
+            color: #fff;
         }
 
         .container {
             text-align: center;
-            background-color: #333;
-            color: #ffffff;
+            background-color: #333; /* Cor do fundo do container */
+            color: #fff;
             padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
         }
 
         h1 {
-            font-size: 8em;
+            font-size: 6rem;
             color: #007ACC;
-            margin-bottom: 0.1em;
+            margin-bottom: 20px;
         }
 
         p {
-            font-size: 1.5em;
-            color: #ffffff;
-            margin-bottom: 1em;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
         }
 
         .btn {
-            display: inline-block;
-            margin-top: 1em;
-            padding: 10px 25px;
-            font-size: 1em;
-            color: #ffffff;
-            background-color: #007ACC;
-            border: none;
-            border-radius: 5px;
             text-decoration: none;
-            transition: background-color 0.3s;
+            font-size: 1.2rem;
+            padding: 12px 25px;
+            background-color: #007ACC;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
         .btn:hover {
             background-color: #005f99;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 4rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+
+            .btn {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
         }
     </style>
 </head>
