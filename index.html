@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camisa Social</title>
+    <style>
+       
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+       
+    
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #2d2d34;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+        }
+        .image-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .image-section img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .thumbnail {
+            display: flex;
+            gap: 10px;
+        }
+        .thumbnail img {
+            width: 70px;
+            height: 70px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+        .thumbnail img:hover {
+            border: 2px solid #555;
+        }
+        .details-section {
+            flex: 1.2;
+            padding-left: 20px;
+        }
+        .details-section h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .details-section p {
+            margin: 5px 0;
+            color: #ffffff;
+        }
+        .price {
+            font-size: 22px;
+            margin: 15px 0;
+            color: #d32f2f;
+        }
+        .price span {
+            font-size: 16px;
+            text-decoration: line-through;
+            color: #888;
+            margin-right: 10px;
+        }
+        .color, .size {
+            margin: 15px 0;
+        }
+        .color label, .size label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .color-selector {
+            width: 30px;
+            height: 30px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+       
+    
+    .color-selector2 {
+        width: 30px;
+        height: 30px;
+        background-color: #000000;
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+    }
+       
+
+        .size-selector {
+            display: inline-block;
+            padding: 5px 10px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .size-selector:hover {
+            background-color: #ddd;
+        }
+        .size-selector.active {
+            background-color: #2624a5;
+            color: #fff;
+            border-color: #2624a5;
+        }
+        .buy-section {
+            margin: 20px 0;
+        }
+        .buy-button {
+            background-color: #2624a5;
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            display: inline-block;
+        }
+        .buy-button:hover {
+            background-color: #c62828;
+        }
+        .table-section {
+            margin-top: 30px;
+        }
+        .table-section table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table-section table th, .table-section table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        .table-section table th {
+            background-color: #ffffff;
+            font-weight: bold;
+      }
+    </style>
+</head>
+<body>
+  
+    <body style="background-color: #2d2d34;">
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ÔmegaStore</title>
+    
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+        <style>
+ 
+            body {
+                font-family: 'Roboto', sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+    
+      
+            header {
+                background: linear-gradient(135deg, #25252b, #25252b);
+                color: white;
+                padding: 20px 0;
+                text-align: center;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                position: relative;
+            }
+    
+            header h1 {
+                font-family: 'Poppins', sans-serif;
+                font-size: 3rem;
+                margin: 0;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                letter-spacing: 2px;
+            }
+    
+            header h1 span {
+                color: #21217a; 
+            }
+    
+            header p {
+                font-size: 1.2rem;
+                margin-top: 10px;
+                font-weight: 500;
+                opacity: 0.8;
+            }
+    
+            header h1, header p {
+                animation: fadeIn 1s ease-in-out;
+            }
+    
+          
+            @keyframes fadeIn {
+                0% {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        </style>
+    </head>
+    <body>
+    
+    <header>
+        <h1><span>ÔMEGA</span>STORE</h1>
+        <p>Moda Casual para o Homem Moderno</p>
+    </header>
+    
+    </body>
+    </html>
+    
+    
+
+
+<div class="container">
+    <div class="image-section">
+        <img src="omegastore2.jpg" alt="Camisa Branca">
+        <div class="thumbnail">
+            <img src="omegastore1.jpg" alt="Camisa Preta">
+
+        </div>
+    </div>
+
+
+
+
+    <div class="details-section">
+        <h1 style="color: white;">Camisa Casual Lisa</h1>
+        <p>Código: 843659487</p>
+        <p class="price"><span style="color: white;">R$ 139,90</span> <span style="color: white;">R$ 69,90</span></p>
+
+
+        <div class="color">
+            <label style="color: white;">Cor:</label>
+            <div class="color-selector" title="Preto"></div>
+            <div class="color-selector2" title="Branco"></div>
+        </div>
+
+        <div class="size">
+            <label style="color: white;">Tamanhos:</label>
+            <div>
+                <span class="size-selector" style="background-color: white; border: 1px solid #ccc; padding: 5px 10px; border-radius: 4px; margin: 5px;">PP</span>
+                <span class="size-selector" style="background-color: white; border: 1px solid #ccc; padding: 5px 10px; border-radius: 4px; margin: 5px;">P</span>
+                <span class="size-selector" style="background-color: white; border: 1px solid #ccc; padding: 5px 10px; border-radius: 4px; margin: 5px;">M</span>
+                <span class="size-selector" style="background-color: white; border: 1px solid #ccc; padding: 5px 10px; border-radius: 4px; margin: 5px;">G</span>
+                <span class="size-selector" style="background-color: white; border: 1px solid #ccc; padding: 5px 10px; border-radius: 4px; margin: 5px;">GG</span>
+            </div>
+        </div>
+        
+        <div class="buy-section">
+            <a href="#" class="buy-button">Comprar</a>
+
+  
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <br>   <title>Botão Adicionar ao Carrinho</title></b> </br> 
+    <style>
+     
+        .cart-button {
+            background-color: #FFA500; 
+            color: #ffffff; 
+            text-decoration: none;
+            padding: 15px 20px; 
+            border-radius: 5px; 
+            font-weight: bold; 
+            font-size: 16px; 
+            border: none; 
+            cursor: pointer; 
+            display: inline-block;
+            text-align: center;
+            transition: background-color 0.3s ease; 
+        }
+
+      
+        .cart-button:hover {
+            background-color: #e69500; 
+        }
+
+       
+        .cart-button .icon {
+            margin-right: 10px; 
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div class="cart-section">
+    <a href="#" class="cart-button">
+        <span class="icon">🛒</span> Adicionar ao Carrinho
+    </a>
+</div>
+
+</body>
+</html>
+
+
+<p style="color: #ffffff;">Vendido e Entregue por <span style="color: #3914a0; font-weight: bold;">ÔmegaStore</span></p>
+
+
+
+        </div>
+        <div class="table-section">
+            <h3 style="color: white;">Tabela de Medidas</h3>
+
+            <table>
+                <table style="background-color: white; border: 1px solid #ccc;">
+                <thead>
+                    <tr>
+                        <th>Tamanho</th>
+                        <th>Altura (cm)</th>
+                        <th>Largura (cm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PP</td>
+                        <td>60</td>
+                        <td>45</td>
+                    </tr>
+                    <tr>
+                        <td>P</td>
+                        <td>65</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td>M</td>
+                        <td>70</td>
+                        <td>55</td>
+                    </tr>
+                    <tr>
+                        <td>G</td>
+                        <td>75</td>
+                        <td>60</td>
+                    </tr>
+                    <tr>
+                        <td>GG</td>
+                        <td>80</td>
+                        <td>65</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<h2 style="color: #ffffff; font-size: 2.5rem; text-align: center; margin-bottom: 20px;">Descrição dos Produtos</h2>
+
+<section style="background-color: #2b2b34; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);">
+    <h2 style="color: #ffffff; font-size: 28px; font-weight: bold; margin-bottom: 15px;">Moda Casual</h2>
+    <p style="font-size: 1.2rem; color: #ffffff; line-height: 1.8; text-align: justify; margin-bottom: 20px;">
+        <strong style="color: #ffffff;">Na ÔmegaStore, a moda casual se une ao conforto e à praticidade para o homem moderno.</strong> 
+        Nossas coleções de moda casual foram criadas pensando em peças versáteis que podem ser usadas em diversas ocasiões, seja para um passeio no final de semana, um almoço com amigos ou até mesmo no trabalho, quando a situação permite um estilo mais descontraído.
+    </p>
+
+    <p style="font-size: 1.2rem; color: #ffffff; line-height: 1.8; text-align: justify; margin-bottom: 20px;">
+        As peças combinam o conforto de materiais leves e respiráveis com o design arrojado e contemporâneo, garantindo que você esteja sempre confortável e estiloso. Camisetas, calças, shorts e jaquetas são apenas algumas das opções disponíveis, todas com o toque de qualidade e sofisticação que você merece.
+    </p>
+
+    <h3 style="font-size: 24px; color: #ffffff; margin-bottom: 10px;">Destaques da Coleção:</h3>
+    <ul style="font-size: 1.2rem; color: #ffffff; line-height: 1.8; margin-left: 20px;">
+        <li style="margin-bottom: 10px;"><strong style="color: #ffffff;">Camisetas:</strong> Estampas exclusivas e designs modernos, ideais para compor looks versáteis e confortáveis.</li>
+        <li style="margin-bottom: 10px;"><strong style="color: #ffffff;">Calças:</strong> Modelagens slim e clássicas, feitas com tecidos de alta qualidade para máxima durabilidade e conforto.</li>
+        <li style="margin-bottom: 10px;"><strong style="color: #ffffff;">Jaquetas e Casacos:</strong> Perfeitas para as noites mais frescas, combinando estilo e praticidade.</li>
+        <li style="margin-bottom: 10px;"><strong style="color: #ffffff;">Shorts:</strong> Perfeitos para os dias mais quentes, com tecidos leves e respiráveis.</li>
+    </ul>
+
+    <p style="font-size: 1.2rem; color: #ffffff; line-height: 1.8; text-align: justify;">
+        <strong style="color: #3366ff;">Seja qual for a sua preferência, a moda casual da ÔmegaStore oferece roupas para todos os gostos, com a garantia de que você estará sempre elegante e confortável.</strong> Descubra nossa coleção e renove seu guarda-roupa com as melhores peças de moda casual disponíveis!
+    </p>
+</section>
+
+    
+<section style="background-color: #2B2B34;">
+    <h3 style="color: #fefeff; font-size: 24px; text-align: center; margin-bottom: 20px;">Galeria de Imagens</h3>
+    <div style="position: relative; max-width: 1200px; margin: 0 auto; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 10px rgba(243, 241, 241, 0.2);">
+        <div style="display: flex; transition: transform 0.5s ease;">
+            <div style="flex: 1; padding: 5px;">
+                <img src="omegastore7.jpg" alt="Camisa Branca" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+            </div>
+            <div style="flex: 1; padding: 5px;">
+                <img src="omegastore4.jpg" alt="Camisa Preta" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(241, 240, 240, 0.1);">
+            </div>
+            <div style="flex: 1; padding: 5px;">
+                <img src="omegastore8.jpg" alt="Camisa Azul" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <footer style="background-color: #25252b; color: #ffffff; padding: 20px 0; text-align: center; width: 100%; position: relative;">
+        <h1 class="header-text" style="color: rgb(226, 226, 238); font-size: 1.2rem; margin: 0;">&copy; 2024 ÔmegaStore</h1>
+        <p style="margin: 5px 0; font-size: 0.9rem;">Todos os direitos reservados.</p>
+    </footer>
+    
+    </body>
+    </html>
+    
