@@ -10,8 +10,14 @@
 <body>
     
     <header> 
+        <div class="cabecalho-botoes">
+            <button type="button" class="botao-login">Entrar</button>
+            <button type="button" class="botao-registrar">Registrar-se</button>
+            <button type="button" class="botao-cadastrar-produto">Cadastrar Produto</button>
+            <button type="button" class="botao-deslogar">Deslogar</button>
+        </div>
+
         <div class="nav-container">
-            
             <div class="barra-navegacao">
                 <div class="conteudo-cabecalho">
                     <h1 class="logotipo">ÔMEGA<span class="logotipo-destaque">STORE</span></h1>
@@ -25,36 +31,12 @@
                             <li><a href="#">Contato</a></li>
                         </ul>
                     </nav>
-
-                    <!-- Formulário de pesquisa -->
-                    <form action="/pesquisa" method="GET" class="form-pesquisa">
-                        <input type="text" name="q" placeholder="Pesquisar..." class="input-pesquisa">
-                        <button type="submit" class="botao-pesquisa">
-                            <i class="fa-solid fa-search"></i>
-                        </button>
-                    </form>
+                    
                     <!-- Carrinho Ícone -->
                     <i class="fa-solid fa-cart-shopping" id="carrinho-icone"></i>
                 </div>
             </div>
             
-            <!-- Carrinho -->
-            <div class="carrinho">
-                <h2 class="carrinho-titulo">Seu carrinho de compras!</h2>
-                <!-- Carrinho Conteúdo -->
-                <div class="carrinho-conteudo">
-
-                </div>
-                <!-- Total -->
-                <div class="total">
-                    <div class="total-titulo">Total</div>
-                    <div class="total-preco">R$0,00</div>
-                </div>
-                <!-- Botão de comprar -->
-                <button type="button" class="btn-compra">Comprar Agora</button>
-                <!-- Fechar carrinho -->
-                <i class="fa-solid fa-x" id="close-cart"></i>
-            </div>
         </div>
     </header>
 
