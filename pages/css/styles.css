@@ -1,14 +1,19 @@
+/* Importa a fonte "Open Sans" do Google Fonts, que será usada em todo o site. */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+/* Remove margens e espaçamentos padrões, ajusta o box model para incluir bordas no tamanho total e define a fonte padrão da página. */
 * {
     margin: 0;
     padding: 0;
     font-family: "Open Sans", serif;
 }
+
+/* Adiciona um fundo cinza na página de login e cadastro */
 body {
     background-color: #25252b;
 }
 
+/* Estiliza o contêiner principal */
 .container {
     display: flex;
     justify-content: center;
@@ -17,6 +22,7 @@ body {
     background-color: #25252b;
 }
 
+/* Define o layout das duas colunas */
 .primeira-coluna,
 .segunda-coluna {
     width: 30%;
@@ -29,6 +35,7 @@ body {
     color: #fff;
 }
 
+/* Estiliza a primeira coluna (azul) */
 .primeira-coluna {
     background-color: #3232d5;
     border-top-left-radius: 15px;
@@ -36,6 +43,7 @@ body {
     text-align: center;
 }
 
+/* Estiliza a segunda coluna (branca) */
 .segunda-coluna {
     background-color: #fff;
     color: #3232d5;
@@ -43,12 +51,14 @@ body {
     border-bottom-right-radius: 15px;
 }
 
+/* Estiliza os títulos das colunas */
 .titulo {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
+/* Estiliza as descrições */
 .descricao {
     font-size: 14px;
     font-weight: 300;
@@ -56,6 +66,7 @@ body {
     text-align: center;
 }
 
+/* Estiliza os botões gerais */
 .btn {
     border-radius: 15px;
     text-transform: uppercase;
@@ -68,35 +79,41 @@ body {
     border: none;
     margin-top: 1rem;
     transition: background-color 1s;
-    align-self: center; /* Centraliza o botão horizontalmente */
+    align-self: center;
 }
 
+/* Estiliza o botão "Entrar" na primeira coluna */
 .btn-primario {
     background-color: transparent;
     border: 1px solid #fff;
 }
 
+/* Efeito de hover no botão "Entrar" */
 .btn-primario:hover {
     background-color: #fff;
     color: #3232d5;
 }
 
+/* Estiliza o botão "Criar conta" na segunda coluna */
 .btn-secundario {
     background-color: #3232d5;
     border: 1px solid #3232d5;
 }
 
+/* Efeito de hover no botão "Criar conta" na segunda coluna */
 .btn-secundario:hover {
     background-color: #fff;
     color: #3232d5;
 }
 
+/* Estiliza o formulário de registro */
 .form {
     display: flex;
     flex-direction: column;
     width: 80%;
 }
 
+/* Estiliza os campos de entrada */
 .label-input {
     display: flex;
     align-items: center;
@@ -106,10 +123,12 @@ body {
     border-radius: 5px;
 }
 
+/* Estiliza os ícones do Font Awesome nos campos */
 .label-input i {
     color: #424242;
 }
 
+/* Estiliza os campos de entrada */
 .form input {
     height: 45px;
     width: 100%;
@@ -119,6 +138,7 @@ body {
     font-size: 16px;
 }
 
+/* Estiliza o texto relacionado à senha */
 .senha {
     color: #424242;
     font-size: 14px;
