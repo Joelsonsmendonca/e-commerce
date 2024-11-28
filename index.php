@@ -52,7 +52,7 @@ if (isset($_GET['url'])) {
                         <nav>
                             <ul>
                                 <li><a href="/e-commerce">Início</a></li>
-                                <li><a href="../e-commerce/?url=carrinho">Produtos</a></li>
+                                <li><a href="../e-commerce/?url=carrinho">Carrinho</a></li>
                                 <li><a href="#">Sobre</a></li>
                                 <li><a href="#">Contato</a></li>
                             </ul>
@@ -104,7 +104,8 @@ if (isset($_GET['url'])) {
         }
     }
     ?>
-    <?php if ($currentUrl == '/e-commerce/' || $currentUrl == "http://localhost/e-commerce/?url=cadastro"): ?>
+
+<?php if ($currentUrl == '/e-commerce/' || $currentUrl == "http://localhost/e-commerce/?url=cadastro"): ?>
 
     <section class="shop container">
         <?php if ($currentUrl == '/e-commerce/' || $currentUrl == "$pasta_raiz"): ?>

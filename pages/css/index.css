@@ -28,7 +28,6 @@ img {
     max-width: 1068px;
     margin: auto;
     width: 100%;
-    flex: 1;
 }
 
 section {
@@ -42,7 +41,9 @@ body, html {
     display: flex;
     flex-direction: column; /* Organiza o layout em coluna */
     font-family: 'Open Sans', sans-serif;
-    background-color: #2d2d34; /* Cor de fundo */
+    background: linear-gradient(135deg, #3232d5, #171427);
+    color: #fff;
+
 }
 
 
@@ -85,6 +86,167 @@ nav ul {
     display: flex;
     list-style: none;
     align-items: center;
+}
+.carrinho-container {
+    padding: 20px;
+    background-color: #3232d5;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carrinho-titulo {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #000000;
+}
+
+.carrinho-table {
+    width: 100%;
+    color: white;
+    border-collapse: collapse;
+}
+.btn-primary {
+    background-color: var(--main-color);
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #4545e8;
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background-color: #25252b;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #3a3a42;
+    transform: scale(1.05);
+}
+
+.produto-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    padding: 1rem;
+}
+
+/* Estilo do botão Cadastrar Produto */
+.btn-cadastrar-produto {
+    background-color: #4caf50; /* Cor de fundo verde */
+    color: #fff; /* Texto branco */
+    border: none; /* Remove a borda */
+    padding: 10px 20px; /* Adiciona padding */
+    font-size: 1rem; /* Tamanho da fonte */
+    font-weight: bold; /* Texto em negrito */
+    border-radius: 8px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de ponteiro */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transição suave */
+}
+
+.btn-cadastrar-produto:hover {
+    background-color: #45a049; /* Cor de fundo mais escura no hover */
+    transform: scale(1.05); /* Leve aumento no hover */
+}
+
+.produto-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    background: rgba(36, 34, 34, 0.9);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.produto-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
+
+/* Estilo do botão Atualizar */
+.btn-atualizar {
+    background-color: #ff9800; /* Cor de fundo laranja */
+    color: #fff; /* Texto branco */
+    border: none; /* Remove a borda */
+    padding: 5px 10px; /* Reduz o padding */
+    font-size: 0.875rem; /* Reduz o tamanho da fonte */
+    font-weight: bold; /* Texto em negrito */
+    border-radius: 8px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de ponteiro */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transição suave */
+}
+
+.btn-atualizar:hover {
+    background-color: #e68900; /* Cor de fundo mais escura no hover */
+    transform: scale(1.05); /* Leve aumento no hover */
+}
+
+.carrinho-table th, .carrinho-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #000000;
+}
+
+.carrinho-table th {
+    background-color: #3232d5;
+    font-weight: bold;
+}
+
+.carrinho-table img {
+    width: 100px;
+    border-radius: 8px;
+    color: #000000;
+}
+
+.carrinho-total {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 20px;
+    color: #000000;
+}
+.btn-danger {
+     background-color: #f44336; /* Red color */
+     color: #fff; /* White text */
+     border: none; /* Remove border */
+     padding: 10px 20px; /* Add padding */
+     font-size: 1rem; /* Font size */
+     font-weight: bold; /* Bold text */
+     border-radius: 8px; /* Rounded corners */
+     cursor: pointer; /* Pointer cursor */
+     transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+ }
+
+.btn-danger:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.carrinho-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #45a049;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.carrinho-btn:hover {
+    background-color: #45a049;
 }
 
 nav ul li {
@@ -185,6 +347,65 @@ header {
     text-align: center;
     margin-bottom: 1.5rem;
 }
+.card {
+    background-color: rgba(36, 34, 34, 0.95); /* Fundo elegante */
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    overflow: hidden; /* Garante que os elementos internos não saiam do card */
+    margin-top: 20px;
+}
+
+.produto-img {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    object-fit: cover;
+    max-height: 300px;
+}
+
+.card-body {
+    color: #fff;
+}
+
+.card-text {
+    color: #ddd;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--main-color);
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #4545e8;
+}
+
+.btn-secondary {
+    background-color: #25252b;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #3a3a42;
+}
+
+.preco {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f5f5f5;
+    margin-top: 10px;
+}
+
+.d-flex {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
 
 .shop {
     margin-top: 2rem;

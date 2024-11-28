@@ -85,7 +85,6 @@ if (isset($_POST['acao'])) {
         </div>
         <br/>
 
-        <button name="acao" class="btn btn-primary w-100 py-2" type="submit">Cadastrar</button>
-        <br/>
+        <button name="acao" class="btn btn-cadastrar-produto w-100 py-2" type="submit">Cadastrar</button>        <br/>
     </form>
 </div>

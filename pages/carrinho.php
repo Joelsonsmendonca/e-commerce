@@ -25,10 +25,13 @@ if (isset($_POST['update_quantidade'])) {
 
 <!DOCTYPE html>
 <html lang="pt">
+<head>
+    <link rel="stylesheet" href="path/to/index.css">
+</head>
 <body>
-<div class="container mt-5">
-    <h1>Seu Carrinho</h1>
-    <table class="table table-striped">
+<div class="container carrinho-container">
+    <h1 class="carrinho-titulo">Seu Carrinho</h1>
+    <table class="table table-striped carrinho-table">
         <thead>
         <tr>
             <th>Foto</th>
@@ -43,9 +46,9 @@ if (isset($_POST['update_quantidade'])) {
         <tbody>
         <?php if (count($carrinho) > 0): ?>
             <?php foreach ($carrinho as $produto_id => $produto): ?>
-                <?php if (is_array($produto)): ?> <!-- Verifica se $produto é um array -->
+                <?php if (is_array($produto)): ?>
                     <tr>
-                        <td><img src="<?php echo htmlspecialchars($produto['foto']); ?>" style="width: 100px;"></td>
+                        <td><img src="<?php echo htmlspecialchars($produto['foto']); ?>" class="img-fluid"></td>
                         <td><?php echo htmlspecialchars($produto['nome-produto']); ?></td>
                         <td><?php echo htmlspecialchars($produto['descricao-produto']); ?></td>
                         <td>R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?></td>
@@ -53,8 +56,7 @@ if (isset($_POST['update_quantidade'])) {
                             <form method="POST" style="display: inline;">
                                 <input type="hidden" name="produto_id" value="<?php echo $produto_id; ?>">
                                 <input type="number" name="quantidade" value="<?php echo $produto['quantidade']; ?>" min="0" step="1" class="form-control" style="width: 80px; display: inline;">
-                                <button type="submit" name="update_quantidade" class="btn btn-primary btn-sm">Atualizar</button>
-                            </form>
+                                <button type="submit" name="update_quantidade" class="btn btn-atualizar btn-sm">Atualizar</button>                            </form>
                         </td>
                         <td>R$ <?php echo number_format($produto['preco'] * $produto['quantidade'], 2, ',', '.'); ?></td>
                         <td>
@@ -82,16 +84,10 @@ if (isset($_POST['update_quantidade'])) {
         }
     }
     ?>
-    <div class="container mt-5">
+    <div class="carrinho-total">
         <h2>Total: R$ <?php echo number_format($total, 2, ',', '.'); ?></h2>
     </div>
-    <a href="/e-commerce/index.php" class="btn btn-primary">Continuar Comprando</a>
+    <a href="/e-commerce/" class="carrinho-btn">Continuar Comprando</a>
 </div>
 </body>
 </html>
-
-<style>
-    body {
-        padding-top: 60px;
-    }
-</style>

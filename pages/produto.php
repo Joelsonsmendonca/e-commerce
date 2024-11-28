@@ -1,5 +1,5 @@
 <body>
-<div class="container mt-5">
+<div class="container mt-5 produto-container">
     <?php
     require_once __DIR__ . '/../MySql.php';
 
@@ -18,28 +18,19 @@
     }
     ?>
 
-    <div class="card">
-        <div class="row g-0">
-            <div class="col-md-4">
-                <img src="<?php echo htmlspecialchars($produto['foto']); ?>" class="img-fluid rounded-start" alt="Imagem do produto">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h1 class="card-title"><?php echo htmlspecialchars($produto['nome-produto']); ?></h1>
-                    <p class="card-text"><?php echo htmlspecialchars($produto['descricao-produto']); ?></p>
-                    <p class="card-text"><strong>Preço: R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?></strong></p>
-                    <a href="pages/adicionarCarrinho.php?produto_id=<?php echo $produto['id']; ?>" class="btn btn-primary">Adicionar ao carrinho</a>
-                    <a href="/e-commerce/index.php" class="btn btn-primary">Voltar</a>
-                </div>
+    <div class="produto-card card">
+        <div class="produto-imagem">
+            <img class="produto-img" src="<?php echo htmlspecialchars($produto['foto']); ?>" alt="Imagem do produto">
+        </div>
+        <div class="produto-detalhes card-body">
+            <h1 class="produto-titulo"><?php echo htmlspecialchars($produto['nome-produto']); ?></h1>
+            <p class="produto-descricao card-text">Descrição: <?php echo htmlspecialchars($produto['descricao-produto']); ?></p>
+            <p class="produto-preco preco">R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?></p>
+            <div class="produto-botoes d-flex">
+                <a href="pages/adicionarCarrinho.php?produto_id=<?php echo $produto['id']; ?>" class="btn btn-primary btn-comprar">Comprar agora</a>
+                <a href="/e-commerce/index.php" class="btn btn-secondary btn-voltar">Continuar comprando</a>
             </div>
         </div>
     </div>
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
-<style>
-    body {
-        padding-top: 70px;
-    }
-</style>
