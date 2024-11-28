@@ -69,16 +69,16 @@ if (isset($_GET['url'])) {
                 // Verificação se o usuário está logado, caso não, aparece o botão de entrar/registrar
                 if (!isset($_SESSION['login'])) {
                     ?>
-                    <div class="col-md-3 text-end">
-                        <button type="button" id="Login" class="btn btn-outline-primary me-2">Entrar</button>
-                        <button type="button" id="Cadastro" class="btn btn-primary">Registrar-se</button>
+                    <div class="cabecalho-botoes">
+                        <button type="button" class="botao-login" id="Login">Entrar</button>
+                        <button type="button" class="botao-registrar" id="Cadastro">Registrar-se</button>
                     </div>
                 <?php } else { ?>
+                    <div class="cabecalho-botoes">
                     <?php if ($_SESSION['cargo'] == 1) { ?> <!-- Verifica o cargo de administrador, caso seja 1 pode cadastrar produto -->
-                        <div class="col-md-3 text-end">
-                        <button type="button" id="cadastrar-produto" class="btn btn-primary">cadastrar produto</button>
+                        <button type="button" class="botao-cadastrar-produto" id="cadastrar-produto">Cadastrar Produto</button>
                     <?php } ?> <!-- Caso esteja logado, aparece botão de deslogar -->
-                    <button id="deslogar" type="button" class="btn btn-primary">deslogar</button>
+                    <button type="button" class="botao-deslogar" id="deslogar">Deslogar</button>
                     </div>
                 <?php } ?>
             </header>
@@ -150,7 +150,7 @@ if (isset($_GET['url'])) {
                 <div onclick="window.location.href='/e-commerce'" style="cursor: pointer;">
                     <h3><span class="logotipo-destaque">ÔMEGA</span>STORE</h3>
                 </div>
-                <p>© 2022 ÔMEGA STORE. Todos os direitos reservados.</p>
+                <p>© 2024 ÔMEGA STORE. Todos os direitos reservados.</p>
             </div>
             <div class="footer-col">
                 <h3>Links</h3>
@@ -182,7 +182,6 @@ if (isset($_GET['url'])) {
     </div>
 </footer>
 
-<script src="pages/ecommerce.js"></script>
 <?php endif; ?>
 
 <script>

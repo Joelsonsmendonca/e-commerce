@@ -39,6 +39,7 @@ if(isset($_SESSION['login'])){
     <title>Cadastro</title>
     <link rel="stylesheet" href="/e-commerce/pages/css/styles.css">
     <link rel="stylesheet" href="pages/fontawesome-free-6.6.0-web/css/all.css">
+    <link rel="icon" type="image/x-icon" href="pages/images/1731979779455.png">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
