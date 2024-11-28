@@ -1,10 +1,13 @@
 <?php
 
+// Verifica se o usuário tem permissão para acessar a página
 if ($_SESSION['cargo'] != 1) {
-    header('Location: /e-commerce/index.php');
+    // Redireciona para a página inicial se o usuário não tiver permissão
+    header('Location: /e-commerce/');
     exit();
 }
 
+// Define a URL para redirecionamento após o cadastro do produto
 $url = "http://localhost:63342/e-commerce/?url=cadastrar-produto";
 
 // Verifica se o formulário foi enviado
@@ -36,7 +39,6 @@ if (isset($_POST['acao'])) {
                     // Executa a consulta com os dados do formulário e o caminho do arquivo
                     $sql->execute(array($nome, $descricao, $preco, $diretorio, $_SESSION['id']));
                     // Define a mensagem de sucesso na sessão
-                    echo '<script>alert("Produto cadastrado com sucesso")</script>';
                     // Redireciona para a mesma página
                     header("Location: $url");
                     exit();
@@ -85,6 +87,7 @@ if (isset($_POST['acao'])) {
         </div>
         <br/>
 
-        <button name="acao" class="btn btn-cadastrar-produto w-100 py-2" type="submit">Cadastrar</button>        <br/>
+        <button name="acao" class="btn btn-cadastrar-produto w-100 py-2" type="submit">Cadastrar</button>
+        <br/>
     </form>
 </div>

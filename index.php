@@ -34,18 +34,18 @@ if (isset($_GET['url'])) {
     <link rel="stylesheet" href="pages/fontawesome-free-6.6.0-web/css/all.css">
     <link rel="icon" type="image/x-icon" href="pages/images/1731979779455.png">
 
-
-            <header>
-                <?php
-                // Mensagem de boas-vindas
-                if (isset($_SESSION['login'])) {
-                    echo '<h6>Olá, ' . $_SESSION['nome'] . '</h6>';
+            <style>
+                .logotipo-img {
+                    width: 60px; /* Adjust the width as needed */
+                    height: auto; /* Maintain aspect ratio */
+                    vertical-align: middle;
                 }
-                ?>
+            </style>
+            <header>
                 <div class="barra-navegacao">
                     <div class="conteudo-cabecalho">
                         <div onclick="window.location.href='/e-commerce'" style="cursor: pointer;">
-                            <h1 class="logotipo">ÔMEGA<span class="logotipo-destaque">STORE</span></h1>
+                            <h1 class="logotipo">ÔMEGA <img src="pages/images/1731979779455.png" alt="Logo" class="logotipo-img"> <span class="logotipo-destaque">STORE</span></h1>
                         </div>
 
                         <!-- Navegação com links para diferentes seções do site -->

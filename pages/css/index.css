@@ -55,7 +55,7 @@ body, html {
 }
 
 .barra-navegacao {
-    background-color: #25252b;
+    background-color: #005fff;
     padding: 10px 20px;
     position: fixed;
     top: 0;
@@ -75,7 +75,7 @@ body, html {
 }
 
 .logotipo {
-    color: #3232d5;
+    color: #3c3c3c;
 }
 
 .logotipo-destaque {
