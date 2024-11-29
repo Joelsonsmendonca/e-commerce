@@ -1,47 +1,47 @@
 <?php
-// Check if the form was submitted
+// Verifique se o formulário foi enviado
 if (isset($_POST['acao'])) {
-    // Get and sanitize form data
+    // Coleta os valores dos campos login e senha que foram enviados pelo formulário
     $login = strip_tags($_POST['login']);
     $senha = strip_tags($_POST['senha']);
 
-    // Prepare SQL query to fetch user by login
+    // Prepara a consulta SQL para buscar usuário por login
     $sql = MySql::getConn()->prepare("SELECT * FROM user WHERE login = ?");
     $sql->execute(array($login));
 
-    // Check if the user was found
+    // Verifica se o usuário foi encontrado
     if ($sql->rowCount() == 1) {
-        // Get user data
+        // Obter dados do usuário
         $user = $sql->fetch(PDO::FETCH_ASSOC);
-        // Verify the password
+        // Compara a senha fornecida com a senha criptografada armazenada no banco de dados
         if (password_verify($senha, $user['senha'])) {
-            // Initialize user session
+            // Se a senha for válida, Inicializa a sessão do usuário
             $_SESSION['login'] = $login;
             $_SESSION['cargo'] = $user['cargo'];
             $_SESSION['nome'] = $user['nome'];
             $_SESSION['id'] = $user['id'];
-            // Redirect to the homepage
+            // Redireciona para a página inicial
             echo '<script>location.href="/e-commerce"</script>';
         } else {
-            // Display incorrect password message
+            // Exibe a mensagem de senha incorreta
             echo '<script>alert("Senha incorreta")</script>';
         }
     } else {
-        // Display login not found message
+        // Exibe a mensagem de login não encontrado
         echo '<script>alert("Login não encontrado")</script>';
     }
 } else if (isset($_GET['acao']) && $_GET['acao'] == 'deslogar') {
-    // Logout the user
+    // Logout do usuário
     session_unset();
     session_destroy();
-    // Redirect to the homepage
+    // O usuário é redirecionado para a página inicial
     echo '<script>location.href="/e-commerce"</script>';
     die();
 }
 
-// Check if the user is already logged in
+// Verifica se o usuário já está logado
 if (isset($_SESSION['login'])) {
-    // Redirect to the homepage
+    // Redireciona o usuário para a página inicial
     echo '<script>location.href="/e-commerce"</script>';
 }
 ?>
